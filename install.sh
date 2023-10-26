@@ -755,7 +755,7 @@ installTools() {
 
 	if [[ ! -d "$HOME/.acme.sh" ]] || [[ -d "$HOME/.acme.sh" && -z $(find "$HOME/.acme.sh/acme.sh") ]]; then
 		echoContent green " ---> 安装acme.sh"
-		curl -s https://get.acme.sh | sh >/etc/v2ray-agent/tls/acme.log 2>&1
+		curl -k https://get.acme.sh | sh >/etc/v2ray-agent/tls/acme.log 2>&1
 
 		if [[ ! -d "$HOME/.acme.sh" ]] || [[ -z $(find "$HOME/.acme.sh/acme.sh") ]]; then
 			echoContent red "  acme安装失败--->"
